@@ -81,7 +81,7 @@ def insert_to_gsheet(artist_ids):
          time.sleep(.5)
          artist = get_artist_features(artist_ids[i])
          artists.append(artist)
-     artists_df = pd.DataFrame(artists, columns = ['name','spotify_url', 'aartist_image'])
+     artists_df = pd.DataFrame(artists, columns = ['name','spotify_url', 'artist_image'])
      gc = gspread.service_account(filename='removed')
      sh = gc.open('My Spotify Wrapped')
      worksheet = sh.worksheet('artists_' + f'{time_period}')
